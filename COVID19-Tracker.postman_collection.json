@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "3404ce2f-b925-4fa9-9188-8a52d5d88a62",
+		"name": "COVID19-Tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "General Stats",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3449f590-6c37-448c-8e3a-1e440e57b005",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://corona-virus-stats.herokuapp.com/api/v1/cases/general-stats",
+					"protocol": "https",
+					"host": [
+						"corona-virus-stats",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cases",
+						"general-stats"
+					]
+				},
+				"description": "Get the general stats for corona virus"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
